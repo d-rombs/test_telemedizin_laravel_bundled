@@ -24,7 +24,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../test_bundle_telemedizin",
+            "url": "../telemedizin-bundle",
             "options": {
                 "symlink": true
             }

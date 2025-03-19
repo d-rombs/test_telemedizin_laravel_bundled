@@ -13,7 +13,7 @@ Dieses Projekt ist eine Laravel-Anwendung für Telemedizin, die das `telemedizin
 
 1. Repository klonen:
 ```bash
-git clone https://github.com/username/test_telemedizin_laravel_bundled.git
+git clone --recurse-submodules https://github.com/d-rombs/test_telemedizin_laravel_bundled.git
 cd test_telemedizin_laravel_bundled
 ```
 
@@ -46,21 +46,21 @@ docker exec -it telemedizin_frontend npm install
 ###Test ausführen des bundles:
 Feature-Tests ausführen:
 ```bash
-   docker-compose exec backend bash -c "cd /var/www/test_bundle_telemedizin && ./vendor/bin/pest --group=feature"
+   docker-compose exec backend bash -c "cd /var/www/telemedizin-bundle && ./vendor/bin/pest --group=feature"
 ```
 Unit-Tests ausführen:
 ```bash
-   docker-compose exec backend bash -c "cd /var/www/test_bundle_telemedizin && ./vendor/bin/pest --group=unit"
+   docker-compose exec backend bash -c "cd /var/www/telemedizin-bundle && ./vendor/bin/pest --group=unit"
 ```
 
 Alle Tests ausführen:
 ```bash
-   docker-compose exec backend bash -c "cd /var/www/test_bundle_telemedizin && ./vendor/bin/pest"
+   docker-compose exec backend bash -c "cd /var/www/telemedizin-bundle && ./vendor/bin/pest"
 ```
 
 ## Verwendung des telemedizin-bundle
 
-Das Projekt verwendet das `telemedizin-bundle` als lokales Composer-Paket. Das Bundle ist unter `../test_bundle_telemedizin` zu finden und enthält folgende Komponenten:
+Das Projekt verwendet das `telemedizin-bundle` als lokales Composer-Paket. Das Bundle ist unter `../telemedizin-bundle` zu finden und enthält folgende Komponenten:
 
 - **Modelle**: Doctor, Appointment, TimeSlot, Specialization
 - **Migrations**: Erstellt die entsprechenden Tabellen in der Datenbank
@@ -76,7 +76,7 @@ Das Bundle wurde über Composer als lokales Repository eingebunden:
 "repositories": [
     {
         "type": "path",
-        "url": "../../test_bundle_telemedizin",
+        "url": "../../telemedizin-bundle",
         "options": {
             "symlink": true
         }
@@ -143,4 +143,4 @@ Das Bundle stellt die folgenden API-Endpunkte bereit:
 - `PATCH /api/telemedizin/appointments/{id}/cancel` - Termin stornieren
 
 
-Doku des eingebunden Bundles (./)
+Doku des eingebunden telemedizin-bundle [telemedizin-bundle README]('./telemedizin-bundle/README.md')

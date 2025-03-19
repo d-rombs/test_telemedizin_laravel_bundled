@@ -29,13 +29,13 @@ WORKDIR /var/www/html
 
 # Copy existing application directory
 COPY ./backend /var/www/html
-COPY ./test_bundle_telemedizin /var/www/test_bundle_telemedizin
+COPY ./telemedizin-bundle /var/www/telemedizin-bundle
 
 # Install dependencies
 RUN composer install
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/html /var/www/test_bundle_telemedizin
+RUN chown -R www-data:www-data /var/www/html /var/www/telemedizin-bundle
 
 # Expose port 9003 for Xdebug
 EXPOSE 9003
