@@ -1,0 +1,3 @@
+[submodule "telemedizin-bundle"]
+	path = telemedizin-bundle
+	url = https://github.com/d-rombs/telemedizin-bundle.git
