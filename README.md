@@ -19,12 +19,17 @@ cd test_telemedizin_laravel_bundled
 
 2. Docker-Container starten:
 ```bash
+    cp backend/.env.example backend/.env
 	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
    Seed vom eingebunden `telemedizin-bundle` ausführen:
    ```bash
    docker-compose exec backend  php artisan telemedizin:seed
    ```
+
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
+- Mailhog: http://localhost:8025
 
 3. Backend-Abhängigkeiten installieren:
 ```bash
@@ -143,4 +148,4 @@ Das Bundle stellt die folgenden API-Endpunkte bereit:
 - `PATCH /api/telemedizin/appointments/{id}/cancel` - Termin stornieren
 
 
-Doku des eingebunden telemedizin-bundle [telemedizin-bundle README]('./telemedizin-bundle/README.md')
+Doku des eingebunden telemedizin-bundle [telemedizin-bundle README]('telemedizin-bundle/README.md')
